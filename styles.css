@@ -42,12 +42,12 @@ body {
 }
 
 .member-card img {
-  width: 100%;
-  height: 220px;
-  object-fit: cover;
+  width: 250px;
+  height: auto;
   border-radius: 12px;
   margin-bottom: 16px;
 }
+
 
 .member-card h3 {
   margin-top: 0;
