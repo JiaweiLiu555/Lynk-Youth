@@ -42,10 +42,11 @@ body {
 }
 
 .member-card img {
-  width: 250px;
+  width: 220px;
   height: auto;
-  border-radius: 12px;
-  margin-bottom: 16px;
+  border-radius: 16px;
+  margin: 0 auto 16px auto;
+  display: block;
 }
 
 
