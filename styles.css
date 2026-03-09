@@ -37,9 +37,10 @@ body {
 .member-card {
   background: white;
   padding: 24px;
-  border-radius: 14px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  border-radius: 16px;
+  box-shadow: 6px 6px 16px rgba(0,0,0,0.08);
   text-align: center;
+  transition: all 0.2s ease;
 }
 
 .member-card img {
@@ -124,7 +125,8 @@ nav a:hover {
   background: white;
   padding: 25px;
   border-radius: 16px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  box-shadow: 6px 6px 16px rgba(0,0,0,0.08);
+  transition: all 0.2s ease;
 }
 
 .project-card h2 {
@@ -135,4 +137,10 @@ nav a:hover {
   color: #555;
   font-size: 14px;
   margin-bottom: 10px;
+}
+
+.member-card:hover,
+.project-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 8px 10px 20px rgba(0,0,0,0.12);
 }
