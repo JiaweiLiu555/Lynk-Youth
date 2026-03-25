@@ -144,3 +144,58 @@ nav a:hover {
   transform: translateY(-4px);
   box-shadow: 8px 10px 20px rgba(0,0,0,0.12);
 }
+
+.modal-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.55);
+  z-index: 1000;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.modal-box {
+  background: white;
+  max-width: 700px;
+  width: 100%;
+  padding: 32px;
+  border-radius: 18px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+  position: relative;
+  animation: modalFade 0.2s ease;
+}
+
+.close-button {
+  position: absolute;
+  top: 14px;
+  right: 18px;
+  background: none;
+  border: none;
+  font-size: 30px;
+  cursor: pointer;
+  color: #444;
+}
+
+.close-button:hover {
+  color: black;
+}
+
+@keyframes modalFade {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.member-card {
+  cursor: pointer;
+}

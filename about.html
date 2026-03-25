@@ -45,7 +45,8 @@
       </section>
 
       <section class="members-grid">
-        <article class="member-card">
+
+        <article class="member-card" onclick="openModal('jiawei-modal')">
           <img src="images/jiaweiliu.PNG" alt="Photo of Jiawei Liu" />
           <h3>Jiawei Liu</h3>
           <p><strong>Role:</strong> Founder</p>
@@ -76,5 +77,36 @@
         </article>
       </section>
     </main>
+
+    <div id="jiawei-modal" class="modal-overlay" onclick="closeModal(event, 'jiawei-modal')">
+  <div class="modal-box">
+    <button class="close-button" onclick="closeModalDirect('jiawei-modal')">&times;</button>
+
+    <h2>Jiawei Liu</h2>
+    <p>
+      Jiawei is a student at Lexington High School and a member of Lynk Youth Initiative.
+      He is passionate about service, leadership, and connecting with others through
+      meaningful community work. His interests include math, music, sports, reading,
+      and public speaking. Through Lynk Youth Initiative, he hopes to help bring
+      young people together to create positive change in both local and global communities.
+    </p>
+  </div>
+</div>
+
+<script>
+  function openModal(modalId) {
+    document.getElementById(modalId).style.display = "flex";
+  }
+
+  function closeModal(event, modalId) {
+    if (event.target.classList.contains("modal-overlay")) {
+      document.getElementById(modalId).style.display = "none";
+    }
+  }
+
+  function closeModalDirect(modalId) {
+    document.getElementById(modalId).style.display = "none";
+  }
+</script>
   </body>
 </html>
