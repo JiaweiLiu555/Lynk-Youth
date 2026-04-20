@@ -10,7 +10,6 @@
     .donate-hero {
       text-align: center;
       padding: 64px 20px 48px;
-      border-bottom: 1px solid var(--border);
       margin-bottom: 52px;
     }
     .donate-hero h1 {
@@ -139,6 +138,58 @@
       padding: 8px;
     }
 
+    .donate-route {
+      margin-bottom: 72px;
+    }
+
+    .donate-route-header {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 32px;
+    }
+
+    .route-number {
+      font-family: 'Playfair Display', serif;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--white);
+      background: var(--navy);
+      padding: 4px 12px;
+      border-radius: 100px;
+      flex-shrink: 0;
+    }
+
+    .route-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.25rem;
+      color: var(--navy);
+      letter-spacing: -0.01em;
+    }
+
+    .route-rule {
+      flex: 1;
+      border: none;
+      border-top: 1px solid var(--border);
+    }
+
+    .future-route-card {
+      border: 2px dashed rgba(15, 31, 61, 0.15);
+      border-radius: var(--radius);
+      padding: 48px 40px;
+      max-width: 560px;
+      text-align: center;
+    }
+
+    .future-route-card p {
+      color: var(--muted);
+      font-size: 0.9rem;
+      line-height: 1.75;
+      font-style: italic;
+    }
+
     @media (max-width: 760px) {
       .zeffy-layout {
         grid-template-columns: 1fr;
@@ -168,13 +219,20 @@
     <p>Every contribution helps youth-led initiatives grow, connect communities, and make a meaningful impact. Thank you for believing in what we do.</p>
   </div>
 
-  <!-- ─── ZEFFY ─── -->
-  <div class="donate-section">
-    <div class="zeffy-layout">
+  <!-- ══════════════════════════════════════ -->
+  <!--  ROUTE 1 · ZEFFY                      -->
+  <!-- ══════════════════════════════════════ -->
+  <div class="donate-route">
+    <div class="donate-route-header">
+      <span class="route-number">01</span>
+      <span class="route-title">Donate Online via Zeffy</span>
+      <hr class="route-rule">
+    </div>
 
+    <div class="zeffy-layout">
       <!-- Left: description -->
       <div class="zeffy-description">
-        <h2>Donate to Lynk Youth Initiative</h2>
+        <!-- <h2>Donate to Lynk Youth Initiative</h2> -->
         <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px;">
           <span style="display:inline-flex;align-items:center;gap:5px;background:var(--white);border:1px solid var(--border);border-radius:100px;padding:4px 12px;font-size:0.75rem;font-weight:600;color:var(--navy);">💳 Credit Card</span>
           <span style="display:inline-flex;align-items:center;gap:5px;background:var(--white);border:1px solid var(--border);border-radius:100px;padding:4px 12px;font-size:0.75rem;font-weight:600;color:var(--navy);">🏦 Bank Account</span>
@@ -187,23 +245,12 @@
           and cultural exchange to local service initiatives — giving youth the
           resources to turn their ideas into real impact.
         </p>
-
         <p style="font-size:0.82rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--muted);margin-bottom:12px;">How you can help</p>
         <ul class="how-to-help">
-          <li>
-            <span class="help-label">Donate</span>
-            Every dollar counts. Contribute now to help us reach our goal.
-          </li>
-          <li>
-            <span class="help-label">Share</span>
-            Spread the word with friends, family, and on social media. Your advocacy amplifies our impact.
-          </li>
-          <li>
-            <span class="help-label">Volunteer</span>
-            Your time and skills can make a difference too.
-          </li>
+          <li><span class="help-label">Donate</span> Every dollar counts. Contribute now to help us reach our goal.</li>
+          <li><span class="help-label">Share</span> Spread the word with friends, family, and on social media. Your advocacy amplifies our impact.</li>
+          <li><span class="help-label">Volunteer</span> Your time and skills can make a difference too.</li>
         </ul>
-
         <p class="donate-thank-you">Thank you for supporting our mission — your generosity is invaluable.</p>
       </div>
 
@@ -213,24 +260,104 @@
           If the donation amount selector does not appear, please use this link directly:
           <a href="https://www.zeffy.com/en-US/donation-form/donate-to-lynk-youth-initiative" target="_blank" rel="noopener" style="color:#5555e7;font-weight:600;">zeffy.com/donate-to-lynk-youth-initiative</a>
         </p>
-      <div class="zeffy-wrapper">
-        <div>
-          <div data-zeffy-embed data-form-url="/embed/donation-form/donate-to-lynk-youth-initiative"></div>
-          <div data-zeffy-embed-fallback style="display:none;">
-            <div style="position:relative;overflow:hidden;height:450px;width:100%;"><iframe title='Donation form powered by Zeffy' style='position: absolute; border: 0; top:0;left:0;bottom:0;right:0;width:100%;height:100%' src='https://www.zeffy.com/embed/donation-form/donate-to-lynk-youth-initiative' allowpaymentrequest allowTransparency="true"></iframe></div>
+        <div class="zeffy-wrapper">
+          <div>
+            <div data-zeffy-embed data-form-url="/embed/donation-form/donate-to-lynk-youth-initiative"></div>
+            <div data-zeffy-embed-fallback style="display:none;">
+              <div style="position:relative;overflow:hidden;height:450px;width:100%;"><iframe title='Donation form powered by Zeffy' style='position: absolute; border: 0; top:0;left:0;bottom:0;right:0;width:100%;height:100%' src='https://www.zeffy.com/embed/donation-form/donate-to-lynk-youth-initiative' allowpaymentrequest allowTransparency="true"></iframe></div>
+            </div>
+            <script
+              src="https://www.zeffy.com/embed/v2/zeffy-embed.js"
+              onerror="document.querySelectorAll('[data-zeffy-embed-fallback]').forEach(function(el){el.style.display='block';});">
+            </script>
           </div>
-          <script
-            src="https://www.zeffy.com/embed/v2/zeffy-embed.js"
-            onerror="document.querySelectorAll('[data-zeffy-embed-fallback]').forEach(function(el){el.style.display='block';});">
-          </script>
         </div>
       </div>
-      </div>
-
     </div>
   </div>
 
-  <!-- ADD MORE DONATION OPTIONS HERE -->
+  <!-- ══════════════════════════════════════ -->
+  <!--  ROUTE 2 · CHECK                      -->
+  <!-- ══════════════════════════════════════ -->
+  <div class="donate-route">
+    <div class="donate-route-header">
+      <span class="route-number">02</span>
+      <span class="route-title">Donate via Check</span>
+      <hr class="route-rule">
+    </div>
+
+    <div style="background:var(--white);border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow-sm);padding:36px 40px;">
+      <h2 style="font-family:'Playfair Display',serif;font-size:clamp(1.5rem,2.5vw,1.9rem);color:var(--navy);letter-spacing:-0.02em;margin-bottom:16px;line-height:1.25;">Donate by Check</h2>
+      <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px;">
+        <span style="display:inline-flex;align-items:center;gap:5px;background:var(--white);border:1px solid var(--border);border-radius:100px;padding:4px 12px;font-size:0.75rem;font-weight:600;color:var(--navy);">✉️ Check</span>
+        <span style="display:inline-flex;align-items:center;gap:5px;background:var(--yellow);border-radius:100px;padding:4px 12px;font-size:0.75rem;font-weight:600;color:var(--navy);">0% Fees</span>
+        <span style="display:inline-flex;align-items:center;gap:5px;background:var(--white);border:1px solid var(--border);border-radius:100px;padding:4px 12px;font-size:0.75rem;font-weight:600;color:var(--navy);">🧾 Tax Receipt</span>
+      </div>
+      <p style="font-size:0.93rem;color:#4a4a5a;line-height:1.8;margin-bottom:20px;">
+        Please make checks payable to: <strong style="color:var(--navy);">Lynk Youth Initiative</strong>
+      </p>
+      <p style="font-size:0.78rem;font-weight:600;letter-spacing:0.09em;text-transform:uppercase;color:var(--muted);margin-bottom:6px;">Mail to</p>
+      <p style="font-size:0.95rem;color:var(--navy);font-weight:600;line-height:1.7;margin-bottom:20px;">
+        17 Utica St<br>Lexington, MA 02420<br>USA
+      </p>
+      <p style="font-size:0.88rem;color:#4a4a5a;line-height:1.75;margin-bottom:20px;">
+        Please include your <strong>name and email</strong> in the memo or with your check so we can send you a receipt.
+      </p>
+      <p style="font-size:0.8rem;color:var(--muted);line-height:1.7;border-top:1px solid var(--border);padding-top:16px;">
+        Lynk Youth Initiative is a registered <strong>501(c)(3)</strong> nonprofit. All donations are tax-deductible to the extent allowed by law.
+      </p>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════ -->
+  <!--  ROUTE 3 · COMPANY                    -->
+  <!-- ══════════════════════════════════════ -->
+  <div class="donate-route">
+    <div class="donate-route-header">
+      <span class="route-number">03</span>
+      <span class="route-title">Donate via Your Company Matching</span>
+      <hr class="route-rule">
+    </div>
+
+    <div style="background:var(--white);border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow-sm);padding:36px 40px">
+      <h2 style="font-family:'Playfair Display',serif;font-size:clamp(1.5rem,2.5vw,1.9rem);color:var(--navy);letter-spacing:-0.02em;margin-bottom:12px;line-height:1.25;">Give Through Your Company and Multiply Your Impact</h2>
+      <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px;">
+        <span style="display:inline-flex;align-items:center;gap:5px;background:var(--white);border:1px solid var(--border);border-radius:100px;padding:4px 12px;font-size:0.75rem;font-weight:600;color:var(--navy);">Payroll Deduction</span>
+        <span style="display:inline-flex;align-items:center;gap:5px;background:var(--yellow);border-radius:100px;padding:4px 12px;font-size:0.75rem;font-weight:600;color:var(--navy);">Company Matching</span>
+        <span style="display:inline-flex;align-items:center;gap:5px;background:var(--yellow);border-radius:100px;padding:4px 12px;font-size:0.75rem;font-weight:600;color:var(--navy);">0% Fees</span>
+        <span style="display:inline-flex;align-items:center;gap:5px;background:var(--white);border:1px solid var(--border);border-radius:100px;padding:4px 12px;font-size:0.75rem;font-weight:600;color:var(--navy);">🧾 Tax Receipt</span>
+      </div>
+      <p style="font-size:0.93rem;color:#4a4a5a;line-height:1.8;margin-bottom:24px;">Your employer may be able to match your donation, allowing your support to go even further.</p>
+
+      <p style="font-size:0.78rem;font-weight:600;letter-spacing:0.09em;text-transform:uppercase;color:var(--muted);margin-bottom:14px;">Steps</p>
+      <ol style="list-style:none;display:flex;flex-direction:column;gap:10px;margin-bottom:28px;">
+        <li style="display:flex;gap:12px;align-items:flex-start;font-size:0.9rem;color:#4a4a5a;line-height:1.65;">
+          <span style="background:var(--navy);color:var(--white);font-weight:700;font-size:0.72rem;width:22px;height:22px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;">1</span>
+          Sign in to your company's giving or matching portal.
+        </li>
+        <li style="display:flex;gap:12px;align-items:flex-start;font-size:0.9rem;color:#4a4a5a;line-height:1.65;">
+          <span style="background:var(--navy);color:var(--white);font-weight:700;font-size:0.72rem;width:22px;height:22px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;">2</span>
+          Search for <strong style="color:var(--navy);">Lynk Youth Initiative</strong>.
+        </li>
+        <li style="display:flex;gap:12px;align-items:flex-start;font-size:0.9rem;color:#4a4a5a;line-height:1.65;">
+          <span style="background:var(--navy);color:var(--white);font-weight:700;font-size:0.72rem;width:22px;height:22px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;">3</span>
+          Choose our organization and make your donation.
+        </li>
+        <li style="display:flex;gap:12px;align-items:flex-start;font-size:0.9rem;color:#4a4a5a;line-height:1.65;">
+          <span style="background:var(--navy);color:var(--white);font-weight:700;font-size:0.72rem;width:22px;height:22px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;">4</span>
+          Submit a matching gift request if your employer offers one.
+        </li>
+      </ol>
+
+      <div style="background:var(--bg);border-radius:10px;padding:18px 20px;border:1px solid var(--border);">
+        <p style="font-size:0.78rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--muted);margin-bottom:6px;">Verify on Benevity</p>
+        <p style="font-size:0.88rem;color:#4a4a5a;line-height:1.7;margin-bottom:8px;">
+          Confirm you're donating to the right organization — check the address &amp; Unique Identifier <strong style="color:var(--navy);">414315022</strong>.
+        </p>
+        <a href="https://causes.benevity.org/causes/840-414315022" target="_blank" rel="noopener" style="font-size:0.85rem;font-weight:600;color:#5555e7;">Lynk Youth Initiative on Benevity →</a>
+      </div>
+    </div>
+  </div>
 
 </main>
 
