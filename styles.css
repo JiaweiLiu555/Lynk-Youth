@@ -82,6 +82,19 @@ nav a.active {
   color: var(--navy);
 }
 
+nav a.nav-donate {
+  background: #5555e7;
+  color: var(--white);
+  border-radius: 8px;
+  margin-left: 8px;
+  font-weight: 600;
+}
+
+nav a.nav-donate:hover {
+  background: #4444cc;
+  color: var(--white);
+}
+
 /* ── Main container ────────────────────────────────────── */
 main {
   max-width: var(--max-w);

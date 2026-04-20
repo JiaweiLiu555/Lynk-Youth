@@ -1,0 +1,242 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Donate | Lynk Youth Initiative</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" type="image/png" href="brand_assets/images/favicon.png" />
+  <style>
+    .donate-hero {
+      text-align: center;
+      padding: 64px 20px 48px;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 52px;
+    }
+    .donate-hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 4vw, 2.8rem);
+      color: var(--navy);
+      letter-spacing: -0.025em;
+      margin-bottom: 16px;
+    }
+    .donate-hero p {
+      color: var(--muted);
+      font-size: 1rem;
+      max-width: 540px;
+      margin: 0 auto;
+      line-height: 1.75;
+    }
+
+    .donate-section {
+      margin-bottom: 60px;
+    }
+
+    .donate-section-header {
+      display: flex;
+      align-items: baseline;
+      gap: 12px;
+      margin-bottom: 24px;
+      padding-bottom: 14px;
+      border-bottom: 2px solid var(--border);
+      flex-wrap: wrap;
+    }
+
+    .donate-section-header h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.4rem;
+      color: var(--navy);
+      letter-spacing: -0.01em;
+      padding-left: 14px;
+      position: relative;
+    }
+
+    .donate-section-header h2::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 2px;
+      bottom: 2px;
+      width: 4px;
+      background: var(--yellow);
+      border-radius: 2px;
+    }
+
+    .donate-section-header span {
+      font-size: 0.82rem;
+      color: var(--muted);
+      font-style: italic;
+    }
+
+    .zeffy-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: start;
+    }
+
+    .zeffy-description h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.5rem, 2.5vw, 1.9rem);
+      color: var(--navy);
+      letter-spacing: -0.02em;
+      margin-bottom: 16px;
+      line-height: 1.25;
+    }
+
+    .zeffy-description .lead {
+      font-size: 0.97rem;
+      color: #4a4a5a;
+      line-height: 1.8;
+      margin-bottom: 28px;
+    }
+
+    .how-to-help {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      margin-bottom: 24px;
+    }
+
+    .how-to-help li {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      font-size: 0.92rem;
+      line-height: 1.65;
+      color: #4a4a5a;
+    }
+
+    .how-to-help li .help-label {
+      font-weight: 600;
+      color: var(--navy);
+      white-space: nowrap;
+      background: var(--yellow);
+      padding: 1px 10px;
+      border-radius: 100px;
+      font-size: 0.78rem;
+      letter-spacing: 0.02em;
+      margin-top: 2px;
+      flex-shrink: 0;
+    }
+
+    .donate-thank-you {
+      font-size: 0.88rem;
+      color: var(--muted);
+      font-style: italic;
+      border-top: 1px solid var(--border);
+      padding-top: 18px;
+      margin-top: 4px;
+    }
+
+    .zeffy-wrapper {
+      background: var(--white);
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow-sm);
+      overflow: hidden;
+      padding: 8px;
+    }
+
+    @media (max-width: 760px) {
+      .zeffy-layout {
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<nav>
+  <a href="index.html" class="nav-brand">Lynk Youth</a>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="projects.html">Projects</a>
+    <a href="contact.html">Contact</a>
+    <a href="donate.html" class="nav-donate active">Donate</a>
+  </div>
+</nav>
+
+<main>
+
+  <div class="donate-hero">
+    <h1>Support Our Work</h1>
+    <p>Every contribution helps youth-led initiatives grow, connect communities, and make a meaningful impact. Thank you for believing in what we do.</p>
+  </div>
+
+  <!-- ─── ZEFFY ─── -->
+  <div class="donate-section">
+    <div class="zeffy-layout">
+
+      <!-- Left: description -->
+      <div class="zeffy-description">
+        <h2>Donate to Lynk Youth Initiative</h2>
+        <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px;">
+          <span style="display:inline-flex;align-items:center;gap:5px;background:var(--white);border:1px solid var(--border);border-radius:100px;padding:4px 12px;font-size:0.75rem;font-weight:600;color:var(--navy);">💳 Credit Card</span>
+          <span style="display:inline-flex;align-items:center;gap:5px;background:var(--white);border:1px solid var(--border);border-radius:100px;padding:4px 12px;font-size:0.75rem;font-weight:600;color:var(--navy);">🏦 Bank Account</span>
+          <span style="display:inline-flex;align-items:center;gap:5px;background:var(--yellow);border-radius:100px;padding:4px 12px;font-size:0.75rem;font-weight:600;color:var(--navy);">0% Fees</span>
+          <span style="display:inline-flex;align-items:center;gap:5px;background:var(--white);border:1px solid var(--border);border-radius:100px;padding:4px 12px;font-size:0.75rem;font-weight:600;color:var(--navy);">🧾 Tax Receipt</span>
+        </div>
+        <p class="lead">
+          We believe change starts with empowering young people to take action.
+          Your support funds student-led projects — from community storytelling
+          and cultural exchange to local service initiatives — giving youth the
+          resources to turn their ideas into real impact.
+        </p>
+
+        <p style="font-size:0.82rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--muted);margin-bottom:12px;">How you can help</p>
+        <ul class="how-to-help">
+          <li>
+            <span class="help-label">Donate</span>
+            Every dollar counts. Contribute now to help us reach our goal.
+          </li>
+          <li>
+            <span class="help-label">Share</span>
+            Spread the word with friends, family, and on social media. Your advocacy amplifies our impact.
+          </li>
+          <li>
+            <span class="help-label">Volunteer</span>
+            Your time and skills can make a difference too.
+          </li>
+        </ul>
+
+        <p class="donate-thank-you">Thank you for supporting our mission — your generosity is invaluable.</p>
+      </div>
+
+      <!-- Right: Zeffy form -->
+      <div>
+        <p style="font-size:0.8rem;color:var(--muted);margin-bottom:8px;line-height:1.6;">
+          If the donation amount selector does not appear, please use this link directly:
+          <a href="https://www.zeffy.com/en-US/donation-form/donate-to-lynk-youth-initiative" target="_blank" rel="noopener" style="color:#5555e7;font-weight:600;">zeffy.com/donate-to-lynk-youth-initiative</a>
+        </p>
+      <div class="zeffy-wrapper">
+        <div>
+          <div data-zeffy-embed data-form-url="/embed/donation-form/donate-to-lynk-youth-initiative"></div>
+          <div data-zeffy-embed-fallback style="display:none;">
+            <div style="position:relative;overflow:hidden;height:450px;width:100%;"><iframe title='Donation form powered by Zeffy' style='position: absolute; border: 0; top:0;left:0;bottom:0;right:0;width:100%;height:100%' src='https://www.zeffy.com/embed/donation-form/donate-to-lynk-youth-initiative' allowpaymentrequest allowTransparency="true"></iframe></div>
+          </div>
+          <script
+            src="https://www.zeffy.com/embed/v2/zeffy-embed.js"
+            onerror="document.querySelectorAll('[data-zeffy-embed-fallback]').forEach(function(el){el.style.display='block';});">
+          </script>
+        </div>
+      </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ADD MORE DONATION OPTIONS HERE -->
+
+</main>
+
+<footer>
+  &copy; 2026 Lynk Youth Initiative &nbsp;&middot;&nbsp; <a href="https://www.lynkyouth.org" style="color: inherit;">lynkyouth.org</a>
+</footer>
+
+</body>
+</html>
