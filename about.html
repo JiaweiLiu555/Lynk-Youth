@@ -1,20 +1,23 @@
 <!doctype html>
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>About | Lynk Youth Initiative</title>
     <link rel="stylesheet" href="styles.css" />
-    <link rel="icon" href="/favicon.png" />
+    <link rel="icon" href="brand_assets/images/favicon.png" />
   </head>
-  <body class="about-page">
+  <body>
 
     <nav>
-      <a href="index.html">Home</a>
-      <a href="about.html">About</a>
-      <a href="projects.html">Projects</a>
-      <a href="donate.html">Donate</a>
-      <a href="contact.html">Contact</a>
+      <a href="index.html" class="nav-brand">Lynk Youth</a>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about.html" class="active">About</a>
+        <a href="projects.html">Projects</a>
+        <a href="donate.html">Donate</a>
+        <a href="contact.html">Contact</a>
+      </div>
     </nav>
 
     <main>
@@ -47,66 +50,65 @@
       <section class="members-grid">
 
         <article class="member-card" onclick="openModal('jiawei-modal')">
-          <img src="images/jiaweiliu.PNG" alt="Photo of Jiawei Liu" />
+          <img src="brand_assets/images/jiaweiliu.PNG" alt="Photo of Jiawei Liu" />
           <h3>Jiawei Liu</h3>
-          <p><strong>Role:</strong> Founder</p>
-          <p><strong>Grade:</strong> 9</p>
-          <p><strong>School:</strong> Lexington High School</p>
+          <span class="member-role">Founder</span>
+          <p><strong>Grade:</strong> 9 &nbsp;&middot;&nbsp; Lexington High School</p>
           <p><strong>Hobbies:</strong> Math, Violin, Basketball, Piano, Swimming, Reading</p>
-          <p><strong>Favorite Quote:</strong> "You miss 100% of the shots you don't take"</p>
+          <p><strong>Quote:</strong> "You miss 100% of the shots you don't take"</p>
         </article>
 
         <article class="member-card">
-          <img src="images/member2.jpg" alt="Photo of Member Name" />
+          <img src="brand_assets/images/member2.jpg" alt="Photo of Stephen Yang" />
           <h3>Stephen Yang</h3>
-          <p><strong>Role:</strong> Project Lead and Web Team Leader</p>
-          <p><strong>Grade:</strong> 9</p>
-          <p><strong>School:</strong> Lexington High School</p>
+          <span class="member-role">Project Lead &amp; Web Team</span>
+          <p><strong>Grade:</strong> 9 &nbsp;&middot;&nbsp; Lexington High School</p>
           <p><strong>Hobbies:</strong> Music, art, public speaking</p>
-          <p><strong>Favorite Quote:</strong> "Insert quote here."</p>
+          <p><strong>Quote:</strong> "Insert quote here."</p>
         </article>
 
         <article class="member-card">
-          <img src="images/member3.jpg" alt="Photo of Member Name" />
+          <img src="brand_assets/images/member3.jpg" alt="Photo of Aiden Bo" />
           <h3>Aiden Bo</h3>
-          <p><strong>Role:</strong> Project Lead</p>
-          <p><strong>Grade:</strong> 9</p>
-          <p><strong>School:</strong> Lexington High School</p>
+          <span class="member-role">Project Lead</span>
+          <p><strong>Grade:</strong> 9 &nbsp;&middot;&nbsp; Lexington High School</p>
           <p><strong>Hobbies:</strong> Tennis, writing, piano</p>
-          <p><strong>Favorite Quote:</strong> "Be the change you want to see in the world"</p>
+          <p><strong>Quote:</strong> "Be the change you want to see in the world"</p>
         </article>
+
       </section>
     </main>
 
+    <footer>
+      &copy; 2026 Lynk Youth Initiative &nbsp;&middot;&nbsp; <a href="https://www.lynkyouth.org" style="color: inherit;">lynkyouth.org</a>
+    </footer>
+
     <div id="jiawei-modal" class="modal-overlay" onclick="closeModal(event, 'jiawei-modal')">
-  <div class="modal-box">
-    <button class="close-button" onclick="closeModalDirect('jiawei-modal')">&times;</button>
+      <div class="modal-box">
+        <button class="close-button" onclick="closeModalDirect('jiawei-modal')">&times;</button>
+        <h2>Jiawei Liu</h2>
+        <p>
+          Jiawei is a student at Lexington High School and the founder of the Lynk Youth Initiative.
+          He is passionate about community service, leadership, and connecting with others through
+          meaningful projects. His interests include math, music, sports, reading,
+          and public speaking. Through Lynk Youth Initiative, he hopes to help bring
+          young people together to create positive change in both local and global communities.
+        </p>
+      </div>
+    </div>
 
-    <h2>Jiawei Liu</h2>
-    <p>
-      Jiawei is a student at Lexington High School and the founder of the Lynk Youth Initiative.
-      He is passionate about community service, leadership, and connecting with others through
-      meaningful projects. His interests include math, music, sports, reading,
-      and public speaking. Through Lynk Youth Initiative, he hopes to help bring
-      young people together to create positive change in both local and global communities.
-    </p>
-  </div>
-</div>
-
-<script>
-  function openModal(modalId) {
-    document.getElementById(modalId).style.display = "flex";
-  }
-
-  function closeModal(event, modalId) {
-    if (event.target.classList.contains("modal-overlay")) {
-      document.getElementById(modalId).style.display = "none";
-    }
-  }
-
-  function closeModalDirect(modalId) {
-    document.getElementById(modalId).style.display = "none";
-  }
-</script>
+    <script>
+      function openModal(modalId) {
+        document.getElementById(modalId).style.display = "flex";
+      }
+      function closeModal(event, modalId) {
+        if (event.target.classList.contains("modal-overlay")) {
+          document.getElementById(modalId).style.display = "none";
+        }
+      }
+      function closeModalDirect(modalId) {
+        document.getElementById(modalId).style.display = "none";
+      }
+    </script>
   </body>
 </html>
