@@ -8,10 +8,10 @@
   <link rel="icon" href="brand_assets/images/smalllogowithoutbg.png" />
 </head>
 
-<body>
+<body class="page-home">
 
 <nav>
-  <a href="index.html" class="nav-brand">Lynk Youth</a>
+  <a href="index.html" class="nav-brand"><img src="brand_assets/images/smalllogowithoutbg.png" alt="" class="nav-brand-icon">Lynk Youth Initiative</a>
   <div class="nav-links">
     <a href="index.html" class="active">Home</a>
     <a href="about.html">About</a>
@@ -21,25 +21,50 @@
   </div>
 </nav>
 
-<main>
-  <div class="hero">
-    <span class="hero-badge">Youth-Led Nonprofit</span>
-    <img class="homepage-logo" src="brand_assets/images/logowithoutbg.png" alt="Lynk Youth Initiative Logo">
-    <h1 class="homepage-title">Linking Youth.<br>Building Communities.</h1>
-    <p class="mission-statement">"Empowering young people to lead, serve, and connect."</p>
-    <p class="hero-body">
-      Lynk Youth Initiative is a registered nonprofit organization dedicated to
-      cross-cultural understanding and community engagement.
-      <br><br>
-      <a href="mailto:jiawei@lynkyouth.org" style="color: var(--navy); font-weight: 500;">jiawei@lynkyouth.org</a>
-    </p>
-    <hr class="hero-divider">
+<div class="hero-wrapper">
+  <!-- Globe stage: clips to show only top portion of the video -->
+  <div class="hero-video-stage">
+    <video class="hero-video" autoplay muted loop playsinline>
+      <source src="brand_assets/images/rotate_globe.mov" type="video/mp4">
+    </video>
+    <div class="hero-video-mask"></div>
   </div>
-</main>
+
+  <main>
+    <div class="hero">
+      <div class="hero-center">
+        <span class="hero-badge" data-reveal data-delay="1">Youth-Led Nonprofit</span>
+        <h1 class="homepage-title" data-reveal data-delay="2">
+          Linking Youth,<br><em>Building Communities.</em>
+        </h1>
+      </div>
+      <!-- Description pinned to bottom -->
+      <!-- <p class="hero-body" data-reveal data-delay="3">
+        Lynk Youth Initiative is a registered, youth-led nonprofit organization dedicated to
+        cross-cultural understanding and community engagement.
+      </p> -->
+    </div>
+  </main>
+</div>
 
 <footer>
   &copy; 2026 Lynk Youth Initiative &nbsp;&middot;&nbsp; <a href="https://www.lynkyouth.org" style="color: inherit;">lynkyouth.org</a>
 </footer>
 
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(el => {
+      if (el.isIntersecting) {
+        el.target.classList.add('is-visible');
+        observer.unobserve(el.target);
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('[data-reveal]').forEach(el => observer.observe(el));
+
+  const globe = document.querySelector('.hero-video');
+  globe.addEventListener('canplay', () => { globe.playbackRate = 0.75; }, { once: true });
+</script>
 </body>
 </html>
