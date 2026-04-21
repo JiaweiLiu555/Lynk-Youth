@@ -194,15 +194,20 @@ main {
   left: 50%;
   transform: translateX(-50%);
   width: 100%;
-  opacity: 0.62;
+  mix-blend-mode: multiply;  /* white video bg disappears on light page bg */
+  opacity: 0.88;
   pointer-events: none;
 }
 
-/* fades: strong top (blends into page bg), soft left/right sides */
+/* fades: top edge, sides, and radial corner blends to eliminate hard edges */
 .hero-video-mask {
   position: absolute;
   inset: 0;
   background:
+    radial-gradient(ellipse 55% 40% at 0%   0%,   var(--bg) 0%, transparent 100%),
+    radial-gradient(ellipse 55% 40% at 100% 0%,   var(--bg) 0%, transparent 100%),
+    radial-gradient(ellipse 40% 28% at 0%   100%, var(--bg) 0%, transparent 100%),
+    radial-gradient(ellipse 40% 28% at 100% 100%, var(--bg) 0%, transparent 100%),
     linear-gradient(to bottom, var(--bg) 0%, transparent 38%),
     linear-gradient(to right,  var(--bg) 0%, transparent 18%),
     linear-gradient(to left,   var(--bg) 0%, transparent 18%);
@@ -843,15 +848,32 @@ footer {
 
 /* ── Responsive ──────────────────────────────────────────── */
 @media (max-width: 640px) {
-  nav {
-    padding: 12px 20px;
-    height: auto;
-    flex-wrap: wrap;
-    gap: 8px;
-  }
-  .nav-links { flex-wrap: wrap; gap: 2px; }
-  nav a { padding: 6px 10px; font-size: 0.82rem; }
   main { padding: 0 18px 60px; }
   .mission-section, .members-intro { padding: 24px 20px; }
   .modal-box { padding: 28px 24px; }
+}
+
+/* Globe: bigger and lower on mobile */
+@media (max-width: 600px) {
+  .hero-video-stage {
+    height: 72vh;
+  }
+  .hero-video {
+    width: 150%;
+  }
+}
+
+/* Single-row nav: hide brand label, tighten link padding */
+@media (max-width: 600px) {
+  nav {
+    padding: 0 4px;
+    height: 46px;
+    flex-wrap: nowrap;
+    gap: 1px;
+  }
+  .nav-brand-label { display: none; }
+  .nav-brand { padding: 5px 10px; }
+  .nav-links { flex-wrap: nowrap; gap: 0; }
+  nav a { padding: 5px 9px; font-size: 0.78rem; letter-spacing: 0; }
+  nav a.nav-donate { margin-left: 2px; }
 }
