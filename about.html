@@ -58,6 +58,14 @@
           <p><strong>Quote:</strong> "You miss 100% of the shots you don't take"</p>
         </article>
 
+        <article class="member-card" onclick="openModal('renee-modal')">
+          <img src="brand_assets/images/reneegu.jpg" alt="Photo of Renee Gu" />
+          <h3>Renee Gu</h3>
+          <span class="member-role">Program Lead</span>
+          <p><strong>Grade:</strong> 8 &nbsp;&middot;&nbsp; Boston Latin School</p>
+          <p><strong>Hobbies:</strong> Creative writing, art, music, science</p>
+        </article>
+
         <!-- <article class="member-card">
           <img src="brand_assets/images/member2.jpg" alt="Photo of Stephen Yang" />
           <h3>Stephen Yang</h3>
@@ -82,6 +90,19 @@
     <footer>
       &copy; 2026 Lynk Youth Initiative &nbsp;&middot;&nbsp; <a href="https://www.lynkyouth.org" style="color: inherit;">lynkyouth.org</a>
     </footer>
+
+    <div id="renee-modal" class="modal-overlay" onclick="closeModal(event, 'renee-modal')">
+      <div class="modal-box">
+        <button class="close-button" onclick="closeModalDirect('renee-modal')">&times;</button>
+        <h2>Renee Gu</h2>
+        <p>
+          Renee is a student at Boston Latin School and a Program Lead for the Lynk Youth Initiative.
+          Passionate about creativity, community service, and building connections through shared interests,
+          she aims to bring communities together to inspire meaningful change and ensure all youth have
+          a voice in shaping the future. Her interests include creative writing, art, music, and science.
+        </p>
+      </div>
+    </div>
 
     <div id="jiawei-modal" class="modal-overlay" onclick="closeModal(event, 'jiawei-modal')">
       <div class="modal-box">
