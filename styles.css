@@ -482,6 +482,24 @@ main {
   border: 3px solid var(--yellow);
 }
 
+.member-photo-placeholder {
+  width: 112px;
+  height: 112px;
+  border-radius: 50%;
+  margin: 0 auto 18px;
+  display: grid;
+  place-items: center;
+  border: 3px solid var(--yellow);
+  background:
+    radial-gradient(circle at 30% 25%, rgba(255, 255, 255, 0.85), transparent 34%),
+    linear-gradient(145deg, #edf2ff, #d8e3fb);
+  color: var(--navy);
+  font-family: 'Playfair Display', serif;
+  font-size: 1.7rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
 .member-card h3 {
   font-family: 'Playfair Display', serif;
   font-size: 1.1rem;
