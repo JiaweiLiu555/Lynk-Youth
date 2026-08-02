@@ -4,7 +4,13 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>About | Lynk Youth Initiative</title>
-    <link rel="stylesheet" href="styles.css?v=20260802-1" />
+    <link rel="stylesheet" href="styles.css?v=20260802-2" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+      crossorigin=""
+    />
     <link rel="icon" href="brand_assets/images/smalllogowithoutbg.png" />
   </head>
   <body>
@@ -154,6 +160,25 @@
 
 
       </section>
+
+      <section class="member-map-section" aria-labelledby="member-map-heading">
+        <div class="member-map-heading">
+          <div>
+            <span class="member-map-kicker">Our community, mapped</span>
+            <h2 id="member-map-heading">Where We're From</h2>
+          </div>
+          <p>Drag to explore, zoom in, and select a red pin to meet a member.</p>
+        </div>
+        <div class="member-map-shell">
+          <div id="member-map" role="application" aria-label="Interactive map showing where Lynk Youth Initiative members are from">
+            <p class="member-map-loading">Loading member map…</p>
+          </div>
+          <div class="member-map-key" aria-hidden="true">
+            <span class="member-map-key-pin"></span>
+            Member hometown
+          </div>
+        </div>
+      </section>
     </main>
 
     <footer>
@@ -187,7 +212,66 @@
       </div>
     </div>
 
+    <script
+      src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+      integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+      crossorigin=""
+    ></script>
     <script>
+      const memberLocations = [
+        { name: "Jiawei Liu", place: "Lexington, MA, USA", coordinates: [42.4473, -71.2245] },
+        { name: "Soren Ergul", place: "Lexington, MA, USA", coordinates: [42.4623, -71.2395] },
+        { name: "Daniel Liu", place: "Detroit, MI, USA", coordinates: [42.3314, -83.0458] },
+        { name: "Aleks Mishchenko", place: "Lexington, MA, USA", coordinates: [42.4323, -71.2095] },
+        { name: "Renee Gu", place: "Boston, MA, USA", coordinates: [42.3601, -71.0589] },
+        { name: "Simon Bouhours", place: "Paris, France", coordinates: [48.8566, 2.3522] },
+        { name: "Rowan Chiang", place: "Burlingame, CA, USA", coordinates: [37.5779, -122.3481] },
+        { name: "Alistair Smith", place: "Coeur d'Alene, ID, USA", coordinates: [47.6777, -116.7805] },
+        { name: "Ishan Sundaram", place: "Charlotte, NC, USA", coordinates: [35.2271, -80.8431] },
+        { name: "Aiden Bo", place: "Lexington, MA, USA", coordinates: [42.4323, -71.2395] },
+        { name: "Isaac Chen", place: "Lexington, MA, USA", coordinates: [42.4623, -71.2095] }
+      ];
+
+      if (window.L) {
+        document.getElementById("member-map").replaceChildren();
+        const memberMap = L.map("member-map", {
+          minZoom: 1,
+          maxZoom: 18,
+          worldCopyJump: true,
+          scrollWheelZoom: false
+        });
+
+        L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
+          maxZoom: 19,
+          attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(memberMap);
+
+        const memberPin = L.divIcon({
+          className: "member-map-marker",
+          html: '<span class="member-map-pin"><span></span></span>',
+          iconSize: [32, 44],
+          iconAnchor: [16, 42],
+          popupAnchor: [0, -38]
+        });
+
+        const markerGroup = L.featureGroup(
+          memberLocations.map((member) =>
+            L.marker(member.coordinates, {
+              icon: memberPin,
+              title: `${member.name} — ${member.place}`,
+              alt: `${member.name} is from ${member.place}`
+            })
+              .bindPopup(`<strong>${member.name}</strong> is from<br>${member.place}!`)
+              .addTo(memberMap)
+          )
+        );
+
+        memberMap.fitBounds(markerGroup.getBounds(), { padding: [44, 44], maxZoom: 4 });
+      } else {
+        document.getElementById("member-map").innerHTML =
+          '<p class="member-map-loading">The interactive map could not load. Please refresh the page to try again.</p>';
+      }
+
       function openModal(modalId) {
         document.getElementById(modalId).style.display = "flex";
       }

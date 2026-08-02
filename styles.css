@@ -562,6 +562,174 @@ main {
   font-weight: 500;
 }
 
+/* ── Member Map ───────────────────────────────────────── */
+.member-map-section {
+  margin-top: 72px;
+  padding: 36px;
+  background:
+    radial-gradient(circle at 8% 0%, rgba(255, 235, 103, 0.22), transparent 34%),
+    linear-gradient(145deg, rgba(255, 255, 255, 0.98), rgba(248, 250, 255, 0.96));
+  border: 1px solid var(--border);
+  border-radius: calc(var(--radius) + 4px);
+  box-shadow: var(--shadow-md);
+}
+
+.member-map-heading {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 36px;
+  margin-bottom: 24px;
+}
+
+.member-map-kicker {
+  display: block;
+  margin-bottom: 6px;
+  color: var(--logo-blue);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.member-map-heading h2 {
+  font-family: 'Playfair Display', serif;
+  color: var(--navy);
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
+  letter-spacing: -0.025em;
+}
+
+.member-map-heading p {
+  max-width: 400px;
+  color: var(--muted);
+  font-size: 0.93rem;
+  line-height: 1.7;
+  text-align: right;
+}
+
+.member-map-shell {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  border: 1px solid rgba(15, 31, 61, 0.14);
+  border-radius: calc(var(--radius) - 3px);
+  box-shadow: 0 18px 40px rgba(15, 31, 61, 0.13), 0 3px 10px rgba(15, 31, 61, 0.07);
+}
+
+#member-map {
+  width: 100%;
+  height: 520px;
+  background: #e9eef3;
+}
+
+.member-map-loading {
+  display: grid;
+  min-height: 100%;
+  place-items: center;
+  color: var(--muted);
+  text-align: center;
+  padding: 32px;
+}
+
+.member-map-key {
+  position: absolute;
+  z-index: 500;
+  right: 14px;
+  bottom: 14px;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 9px 13px;
+  background: rgba(255, 255, 255, 0.94);
+  border: 1px solid rgba(15, 31, 61, 0.13);
+  border-radius: 100px;
+  box-shadow: 0 8px 22px rgba(15, 31, 61, 0.15);
+  color: var(--navy);
+  font-size: 0.75rem;
+  font-weight: 600;
+  pointer-events: none;
+}
+
+.member-map-key-pin {
+  width: 12px;
+  height: 12px;
+  background: #d93b3b;
+  border: 2px solid #fff;
+  border-radius: 50% 50% 50% 0;
+  box-shadow: 0 2px 5px rgba(93, 13, 13, 0.28);
+  transform: rotate(-45deg);
+}
+
+.member-map-marker {
+  background: transparent;
+  border: 0;
+}
+
+.member-map-pin {
+  position: absolute;
+  left: 3px;
+  top: 2px;
+  display: grid;
+  width: 27px;
+  height: 27px;
+  place-items: center;
+  background: #d93b3b;
+  border: 2px solid #fff;
+  border-radius: 50% 50% 50% 0;
+  box-shadow: 0 7px 14px rgba(93, 13, 13, 0.34);
+  transform: rotate(-45deg);
+  transform-origin: 50% 50%;
+  transition: transform 0.18s ease;
+}
+
+.member-map-pin span {
+  width: 8px;
+  height: 8px;
+  background: #fff;
+  border-radius: 50%;
+}
+
+.member-map-marker:hover .member-map-pin,
+.member-map-marker:focus .member-map-pin {
+  transform: rotate(-45deg) scale(1.16);
+}
+
+.member-map-marker:focus {
+  outline: 3px solid rgba(18, 101, 168, 0.35);
+  outline-offset: 4px;
+}
+
+.member-map-marker:active .member-map-pin {
+  transform: rotate(-45deg) scale(0.96);
+}
+
+#member-map .leaflet-control-zoom a {
+  color: var(--navy);
+}
+
+#member-map .leaflet-control-zoom a:focus-visible {
+  outline: 3px solid rgba(18, 101, 168, 0.4);
+  outline-offset: 1px;
+}
+
+#member-map .leaflet-popup-content-wrapper {
+  border-radius: 12px;
+  box-shadow: 0 14px 34px rgba(15, 31, 61, 0.2);
+}
+
+#member-map .leaflet-popup-content {
+  margin: 14px 18px;
+  color: var(--ink);
+  font-family: 'DM Sans', sans-serif;
+  line-height: 1.55;
+}
+
+#member-map .leaflet-popup-content strong {
+  color: var(--navy);
+  font-family: 'Playfair Display', serif;
+  font-size: 1rem;
+}
+
 /* ── Projects Page ─────────────────────────────────────── */
 .projects-page-hero {
   text-align: center;
@@ -908,6 +1076,11 @@ footer {
 @media (max-width: 640px) {
   main { padding: 0 18px 60px; }
   .mission-section, .members-intro { padding: 24px 20px; }
+  .member-map-section { margin-top: 48px; padding: 24px 18px 18px; }
+  .member-map-heading { display: block; }
+  .member-map-heading p { margin-top: 10px; text-align: left; }
+  #member-map { height: 430px; }
+  .member-map-key { right: 10px; bottom: 10px; }
   .modal-box { padding: 28px 24px; }
 }
 
