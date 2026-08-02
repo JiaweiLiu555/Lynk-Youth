@@ -158,6 +158,15 @@
           <p><strong>Hobbies:</strong> To be added</p>
         </article>
 
+        <article class="member-card">
+          <div class="member-photo-placeholder" role="img" aria-label="Photo placeholder for Ryu Ruangchainikom">RR</div>
+          <h3>Ryu Ruangchainikom</h3>
+          <span class="member-role">Member</span>
+          <p><strong>Grade:</strong> 10 &nbsp;&middot;&nbsp; To be added</p>
+          <p><strong>From:</strong> To be added</p>
+          <p><strong>Hobbies:</strong> To be added</p>
+        </article>
+
 
       </section>
 
@@ -219,17 +228,17 @@
     ></script>
     <script>
       const memberLocations = [
-        { name: "Jiawei Liu", place: "Lexington, MA, USA", coordinates: [42.4473, -71.2245], pinOffset: [0, 0] },
-        { name: "Soren Ergul", place: "Lexington, MA, USA", coordinates: [42.4623, -71.2395], pinOffset: [-15, -27] },
+        { name: "Jiawei Liu", place: "Lexington, MA, USA", coordinates: [42.4473, -71.2245] },
+        { name: "Soren Ergul", place: "Lexington, MA, USA", coordinates: [42.4623, -71.2395] },
         { name: "Daniel Liu", place: "Detroit, MI, USA", coordinates: [42.3314, -83.0458] },
-        { name: "Aleks Mishchenko", place: "Lexington, MA, USA", coordinates: [42.4323, -71.2095], pinOffset: [17, -27] },
-        { name: "Renee Gu", place: "Boston, MA, USA", coordinates: [42.3601, -71.0589], pinOffset: [24, 25] },
+        { name: "Aleks Mishchenko", place: "Lexington, MA, USA", coordinates: [42.4323, -71.2095] },
+        { name: "Renee Gu", place: "Boston, MA, USA", coordinates: [42.3601, -71.0589] },
         { name: "Simon Bouhours", place: "Paris, France", coordinates: [48.8566, 2.3522] },
         { name: "Rowan Chiang", place: "Burlingame, CA, USA", coordinates: [37.5779, -122.3481] },
         { name: "Alistair Smith", place: "Coeur d'Alene, ID, USA", coordinates: [47.6777, -116.7805] },
         { name: "Ishan Sundaram", place: "Charlotte, NC, USA", coordinates: [35.2271, -80.8431] },
-        { name: "Aiden Bo", place: "Lexington, MA, USA", coordinates: [42.4323, -71.2395], pinOffset: [-28, 5] },
-        { name: "Isaac Chen", place: "Lexington, MA, USA", coordinates: [42.4623, -71.2095], pinOffset: [-10, 28] }
+        { name: "Aiden Bo", place: "Lexington, MA, USA", coordinates: [42.4323, -71.2395] },
+        { name: "Isaac Chen", place: "Lexington, MA, USA", coordinates: [42.4623, -71.2095] }
       ];
 
       if (window.L) {
@@ -248,17 +257,17 @@
 
         const markerGroup = L.featureGroup(
           memberLocations.map((member) => {
-            const [pinX, pinY] = member.pinOffset || [0, 0];
             const memberPin = L.divIcon({
               className: "member-map-marker",
               html: '<span class="member-map-pin"><span></span></span>',
               iconSize: [32, 44],
-              iconAnchor: [16 - pinX, 42 - pinY],
-              popupAnchor: [pinX, pinY - 38]
+              iconAnchor: [16, 42],
+              popupAnchor: [0, -38]
             });
 
             return L.marker(member.coordinates, {
               icon: memberPin,
+              zIndexOffset: member.name === "Jiawei Liu" ? 1000 : 0,
               title: `${member.name} — ${member.place}`,
               alt: `${member.name} is from ${member.place}`
             })
