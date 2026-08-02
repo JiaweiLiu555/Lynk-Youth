@@ -5,6 +5,8 @@
 :root {
   --yellow: #FFEB67;
   --yellow-hover: #ffe033;
+  --logo-blue: #1265a8;
+  --logo-blue-hover: #0b4f86;
   --blue-soft: #ddeaff;
   --navy: #0f1f3d;
   --ink: #1c1c2e;
@@ -146,7 +148,7 @@ nav a.active {
 }
 
 nav a.nav-donate {
-  background: #5555e7;
+  background: var(--logo-blue);
   color: var(--white);
   border-radius: 100px;
   margin-left: 4px;
@@ -154,7 +156,7 @@ nav a.nav-donate {
 }
 
 nav a.nav-donate:hover {
-  background: #4444cc;
+  background: var(--logo-blue-hover);
   color: var(--white);
   transform: translateY(-1px);
 }
@@ -208,7 +210,7 @@ main {
     radial-gradient(ellipse 55% 40% at 100% 0%,   var(--bg) 0%, transparent 100%),
     radial-gradient(ellipse 40% 28% at 0%   100%, var(--bg) 0%, transparent 100%),
     radial-gradient(ellipse 40% 28% at 100% 100%, var(--bg) 0%, transparent 100%),
-    linear-gradient(to bottom, var(--bg) 0%, transparent 38%),
+    linear-gradient(to bottom, var(--bg) 0%, var(--bg) 34%, transparent 68%),
     linear-gradient(to right,  var(--bg) 0%, transparent 18%),
     linear-gradient(to left,   var(--bg) 0%, transparent 18%);
   z-index: 1;
@@ -316,7 +318,7 @@ main {
 .homepage-title em {
   font-style: italic;
   font-weight: 600;
-  color: #5555e7;
+  color: var(--logo-blue);
   display: block;
 }
 
@@ -502,7 +504,7 @@ main {
 }
 
 .member-photo-frame--jiawei img {
-  transform: translateX(2px) scale(1.04);
+  transform: translateX(3px) scale(1.02);
 }
 
 .member-photo-frame--aiden img {
@@ -704,6 +706,17 @@ main {
 .card-link:hover {
   background: var(--yellow-hover);
   transform: translateX(3px);
+}
+
+.card-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 16px;
+}
+
+.card-links .card-link {
+  margin-top: 0;
 }
 
 /* Future section */
