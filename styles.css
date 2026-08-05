@@ -1239,7 +1239,7 @@ footer {
       rgba(255, 240, 220, 0.28) 100%
     ),
     url('brand_assets/images/worldwide-speech-series.png');
-  background-position: center, 35% top;
+  background-position: center, 47% 112px;
   background-repeat: no-repeat;
   background-size: cover, auto 108%;
 }
@@ -1312,10 +1312,6 @@ footer {
   letter-spacing: -0.045em;
   line-height: 0.98;
   max-width: 560px;
-}
-
-.project-portal-title-fit {
-  font-size: 0.7em;
 }
 
 .project-portal--ai .project-portal-title,
@@ -1635,6 +1631,10 @@ footer {
   font-size: clamp(3.2rem, 7vw, 6.3rem);
 }
 
+.project-theme-hawks .project-category-title-fit {
+  font-size: 0.68em;
+}
+
 .project-category-summary > p {
   color: #4f596b;
   font-size: 1rem;
@@ -1844,10 +1844,6 @@ footer {
     font-size: clamp(2.45rem, 12vw, 3.4rem);
   }
 
-  .project-portal--hawks .project-portal-title-fit {
-    font-size: 0.54em;
-  }
-
   .project-portal-description { font-size: 0.91rem; }
 
   .project-portal-footer { margin-top: 32px; }
@@ -1875,6 +1871,10 @@ footer {
 
   .project-theme-hawks .project-category-heading h1 {
     font-size: clamp(2.3rem, 10vw, 3rem);
+  }
+
+  .project-theme-hawks .project-category-title-fit {
+    font-size: 0.7em;
   }
 
   .project-category-summary { margin-top: 30px; }
