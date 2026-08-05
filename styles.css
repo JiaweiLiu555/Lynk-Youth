@@ -1128,7 +1128,7 @@ footer {
 
 .project-hub-hero {
   max-width: 900px;
-  padding: 78px 0 56px;
+  padding: 78px 0 46px;
 }
 
 .project-hub-kicker,
@@ -1207,6 +1207,20 @@ footer {
   --portal-ink: #f8fbff;
   --portal-surface: #10233f;
   --portal-accent: #8fc7ff;
+  background-color: #10233f;
+  background-image:
+    linear-gradient(
+      to bottom,
+      #10233f 0%,
+      #10233f 20%,
+      rgba(16, 35, 63, 0.93) 34%,
+      rgba(16, 35, 63, 0.62) 57%,
+      rgba(16, 35, 63, 0.42) 100%
+    ),
+    url('brand_assets/images/stanford-ai4all.png');
+  background-position: center, center 35%;
+  background-repeat: no-repeat;
+  background-size: cover, auto 125%;
   border-color: rgba(255, 255, 255, 0.12);
   box-shadow: 0 26px 70px rgba(15, 31, 61, 0.2);
 }
@@ -1286,6 +1300,10 @@ footer {
   max-width: 560px;
 }
 
+.project-portal-title-fit {
+  font-size: 0.7em;
+}
+
 .project-portal--ai .project-portal-title,
 .project-portal--speech .project-portal-title {
   font-size: clamp(2.15rem, 4vw, 3.4rem);
@@ -1304,7 +1322,7 @@ footer {
   align-items: flex-end;
   display: flex;
   gap: 20px;
-  justify-content: space-between;
+  justify-content: flex-end;
   margin-top: 42px;
   position: relative;
   z-index: 2;
@@ -1810,6 +1828,10 @@ footer {
   .project-portal--ai .project-portal-title,
   .project-portal--speech .project-portal-title {
     font-size: clamp(2.45rem, 12vw, 3.4rem);
+  }
+
+  .project-portal--hawks .project-portal-title-fit {
+    font-size: 0.54em;
   }
 
   .project-portal-description { font-size: 0.91rem; }
