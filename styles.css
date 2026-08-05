@@ -1228,6 +1228,20 @@ footer {
 .project-portal--speech {
   --portal-surface: #fff0dc;
   --portal-accent: #c9542d;
+  background-color: #fff0dc;
+  background-image:
+    linear-gradient(
+      to bottom,
+      #fff0dc 0%,
+      #fff0dc 20%,
+      rgba(255, 240, 220, 0.95) 34%,
+      rgba(255, 240, 220, 0.72) 58%,
+      rgba(255, 240, 220, 0.42) 100%
+    ),
+    url('brand_assets/images/worldwide-speech-series.png');
+  background-position: center, center 46%;
+  background-repeat: no-repeat;
+  background-size: cover, auto 115%;
 }
 
 .project-portal--hawks {
