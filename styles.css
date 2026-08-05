@@ -1218,9 +1218,9 @@ footer {
       rgba(16, 35, 63, 0.42) 100%
     ),
     url('brand_assets/images/stanford-ai4all.png');
-  background-position: center, center 35%;
+  background-position: center, center top;
   background-repeat: no-repeat;
-  background-size: cover, auto 125%;
+  background-size: cover, auto 135%;
   border-color: rgba(255, 255, 255, 0.12);
   box-shadow: 0 26px 70px rgba(15, 31, 61, 0.2);
 }
