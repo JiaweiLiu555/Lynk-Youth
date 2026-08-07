@@ -147,20 +147,6 @@ nav a.active {
   color: var(--navy);
 }
 
-nav a.nav-donate {
-  background: var(--logo-blue);
-  color: var(--white);
-  border-radius: 100px;
-  margin-left: 4px;
-  font-weight: 600;
-}
-
-nav a.nav-donate:hover {
-  background: var(--logo-blue-hover);
-  color: var(--white);
-  transform: translateY(-1px);
-}
-
 /* ── Main container ────────────────────────────────────── */
 main {
   max-width: var(--max-w);
@@ -1110,7 +1096,6 @@ footer {
   .nav-brand { padding: 5px 10px; }
   .nav-links { flex-wrap: nowrap; gap: 0; }
   nav a { padding: 5px 9px; font-size: 0.78rem; letter-spacing: 0; }
-  nav a.nav-donate { margin-left: 2px; }
 }
 
 /* ── Project portal experience ─────────────────────────── */
